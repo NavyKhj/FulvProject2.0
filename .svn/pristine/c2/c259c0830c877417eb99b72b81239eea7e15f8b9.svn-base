@@ -1,0 +1,117 @@
+package com.tcps.etc_module.ui.activity;
+
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Button;
+
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.tcps.common_module.aspectj.CheckLogin;
+import com.tcps.common_module.baseApplication.app;
+import com.tcps.common_module.baseMvp.BaseMvpActivity;
+import com.tcps.common_module.utils.Const;
+import com.tcps.common_module.utils.PreferencesUtils;
+import com.tcps.common_module.utils.ToastUtils;
+import com.tcps.etc_module.R;
+import com.tcps.etc_module.R2;
+import com.tcps.etc_module.mvp.contract.TestContract;
+import com.tcps.etc_module.mvp.presenter.TestPresenter;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+@Route(path = "/etc/EtcActivity")
+public class EtcActivity extends BaseMvpActivity<TestPresenter> implements TestContract.View {
+
+    @SuppressWarnings("unused")
+    @BindView(R2.id.btn)
+    Button btn;
+
+    @Override
+    public void beforeInitView(Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_etc;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+        setToolBarTitle("EtcActivity", GravityType.CENTER);
+    }
+
+    @Override
+    public TestPresenter initPresenter() {
+        return new TestPresenter(this);
+    }
+
+    @Override
+    public void initData(Bundle bundle) {
+        /*Button btn = (Button) findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                ARouter.getInstance().build("/app/TestActivity").navigation();
+//                PreferencesUtils.putBoolean(app.getApplication(), Const.LOGIN, true);
+                PreferencesUtils.removeKey(app.getApplication(), Const.LOGIN);
+            }
+        });*/
+    }
+
+    @Override
+    public void loadDataSuccess(String Data, String requestTag) {
+
+    }
+
+    @Override
+    public void loadDataError(Throwable e, int requestTag) {
+
+    }
+
+    /**
+     * 创建菜单
+     *
+     * @param menu
+     * @return
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int i = item.getItemId();
+        if (i == R.id.item_add) {
+//            ToastUtils.show(EtcActivity.this, "菜单");
+//            mPresenter.getServiceTime(this);
+//            onViewClicked();
+//            ARouter.getInstance().build("/base/RegisterLoginActivity").navigation(this);
+            onClicked();
+        }
+        return true;
+    }
+
+    @CheckLogin
+    private void onClicked() {
+        ToastUtils.show(this, "点击");
+//        mPresenter.getServiceTime(EtcActivity.this);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
+
+    @OnClick(R2.id.btn)
+    public void onViewClicked() {
+        ToastUtils.show(this, "点击");
+        PreferencesUtils.removeKey(app.getApplication(), Const.LOGIN);
+    }
+}

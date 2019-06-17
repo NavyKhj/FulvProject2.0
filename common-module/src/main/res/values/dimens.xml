@@ -1,0 +1,35 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="font_size">12sp</dimen>
+    <dimen name="font_bigger_size">18sp</dimen>
+    <dimen name="font_bigger_bigger_size">22sp</dimen>
+    <!--页面的通用边距-->
+    <dimen name="page_horizontal">20dp</dimen>
+    <dimen name="page_vertical">20dp</dimen>
+    <!--margin padding  边距-->
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_30">30dp</dimen>
+    <dimen name="margin_40">40dp</dimen>
+    <dimen name="margin_50">50dp</dimen>
+
+    <dimen name="textSize_24">24.0sp</dimen>
+    <dimen name="textSize_22">22.0sp</dimen>
+    <dimen name="textSize_20">20.0sp</dimen>
+    <dimen name="textSize_18">18.0sp</dimen>
+    <dimen name="textSize_16">16.0sp</dimen>
+    <dimen name="textSize_15">15.0sp</dimen>
+    <dimen name="textSize_14">14.0sp</dimen>
+    <dimen name="textSize_12">12.0sp</dimen>
+    <dimen name="textSize_10">10.0sp</dimen>
+
+    <dimen name="same_btn_radius">8dp</dimen>
+    <dimen name="same_btn_padding">4dp</dimen>
+
+    <!--标准行高-->
+    <dimen name="normal_height">48dp</dimen>
+</resources>

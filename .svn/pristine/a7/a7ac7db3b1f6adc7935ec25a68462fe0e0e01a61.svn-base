@@ -1,0 +1,84 @@
+package com.tcps.fulvproject.ui.activity;
+
+import android.os.Bundle;
+import android.widget.FrameLayout;
+
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.ashokvarma.bottomnavigation.BottomNavigationBar;
+import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.tcps.common_module.aspectj.CheckLogin;
+import com.tcps.common_module.baseMvp.BaseAppCompatActivity;
+import com.tcps.fulvproject.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+@Route(path = "/app/MainActivity")
+public class MainActivity extends BaseAppCompatActivity implements BottomNavigationBar.OnTabSelectedListener {
+    @BindView(R.id.navigation_content)
+    FrameLayout navigationContent;
+    @BindView(R.id.bottom_navigation_bar)
+    BottomNavigationBar bottomNavigationBar;
+
+    @Override
+    public void beforeInitView(Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+        ButterKnife.bind(this);
+        bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
+        bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
+        bottomNavigationBar.setBarBackgroundColor(R.color.navigation_bg);
+        //滚动隐藏
+        bottomNavigationBar.setAutoHideEnabled(false);
+        //默认item背景
+        bottomNavigationBar.setInActiveColor(R.color.navigation_item_bg);
+        bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.home, getString(R.string.home)))
+                .addItem(new BottomNavigationItem(R.mipmap.vehicle_service, getString(R.string.vehicle_service)))
+                .addItem(new BottomNavigationItem(R.mipmap.mine, getString(R.string.mine)))
+                .addItem(new BottomNavigationItem(R.mipmap.forum, getString(R.string.forum)))
+                .setFirstSelectedPosition(0)
+                .initialise();
+        bottomNavigationBar.setTabSelectedListener(this);
+    }
+
+    @Override
+    public void initMvp() {
+
+    }
+
+    @Override
+    public void initData(Bundle bundle) {
+    }
+
+    @Override
+    public void onTabSelected(int position) {
+        switch (position) {
+            case 0:
+                CheckLoginTest();
+                break;
+        }
+    }
+
+    @CheckLogin
+    private void CheckLoginTest() {
+
+    }
+
+    @Override
+    public void onTabUnselected(int position) {
+
+    }
+
+    @Override
+    public void onTabReselected(int position) {
+
+    }
+}

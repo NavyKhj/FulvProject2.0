@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">fulvproject</string>
+    <string name="home">首页</string>
+    <string name="vehicle_service">车服务</string>
+    <string name="mine">我的</string>
+    <string name="forum">论坛</string>
+
+    <string name="scenic_spot">景区门票</string>
+    <string name="parking">城市停车</string>
+    <string name="high_speed">高速快览</string>
+    <string name="user_register">用户注册</string>
+    <string name="bind_etc">绑定ETC</string>
+    <string name="self_driving">自驾召集</string>
+    <string name="camp">驿站营地</string>
+    <string name="hotel">酒店</string>
+    <string name="high_quality_line">优质路线</string>
+</resources>

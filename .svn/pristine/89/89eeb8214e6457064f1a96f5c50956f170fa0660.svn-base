@@ -1,0 +1,24 @@
+ext {
+    supportVersion = '27.1.1'
+    android = [
+            applicationId    : "com.tcps.atoutertest",
+            compileSdkVersion: 27,
+            targetSdkVersion : 27,
+            minSdkVersion    : 19,
+            versionCode      : 1,
+            versionName      : "1.0.0"
+    ]
+    dependencies = [
+            supportv7           : "com.android.support:appcompat-v7:${supportVersion}",
+            supportv4           : "com.android.support:support-v4:${supportVersion}",
+            recyclerviewv7      : "com.android.support:recyclerview-v7:${supportVersion}",
+            constraintlayout    : "com.android.support.constraint:constraint-layout:1.0.2",
+            butterknife         : "com.jakewharton:butterknife:8.4.0",
+            butterknife_compiler: "com.jakewharton:butterknife-compiler:8.4.0",
+            arouter             : "com.alibaba:arouter-api:1.3.1",
+            arouter_compiler    : "com.alibaba:arouter-compiler:1.1.4",
+            design              : "com.android.support:design:${supportVersion}"
+    ]
+    isDebugType = false //module
+}
+project.ext.set("is_debug_type", "true") //主APP

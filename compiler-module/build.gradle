@@ -1,0 +1,17 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //可以简化代码（直接生成包名类名等）
+    implementation 'com.squareup:javapoet:1.10.0'
+    implementation 'com.google.auto.service:auto-service:1.0-rc3'
+    implementation 'com.google.auto:auto-common:0.8'
+    implementation project(':annotations-module')
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+//指定编译的编码
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

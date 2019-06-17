@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">fulvproject</string>
+    <string name="home">首页</string>
+    <string name="vehicle_service">车服务</string>
+    <string name="mine">我的</string>
+    <string name="forum">论坛</string>
+</resources>

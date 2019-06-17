@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tcps.common_module">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application android:theme="@style/AppTheme">
+        <activity android:name=".commonUI.activity.RegisterLoginActivity" />
+    </application>
+</manifest>

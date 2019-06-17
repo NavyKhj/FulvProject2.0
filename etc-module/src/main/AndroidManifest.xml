@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tcps.etc_module">
+
+    <application
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.activity.EtcActivity" />
+    </application>
+</manifest>
